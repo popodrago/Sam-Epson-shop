@@ -43,14 +43,14 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
         <div className="space-y-6">
           
           <div className="text-center space-y-2">
-            <div className="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 mx-auto flex items-center justify-center font-bold shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 mx-auto flex items-center justify-center font-bold shadow-sm">
               <Lock className="w-6 h-6" />
             </div>
-            <h2 className="text-xl font-black text-gray-900 tracking-tight">
+            <h2 className="text-xl font-black text-slate-900 tracking-tight">
               Administrator Access Portal
             </h2>
-            <p className="text-xs text-gray-500">
-              Authorized administrators only. Customer accounts are disabled.
+            <p className="text-xs text-slate-500">
+              Authorized SAM EPSON administrators only.
             </p>
           </div>
 
@@ -62,18 +62,18 @@ export const AdminLoginModal: React.FC<AdminLoginModalProps> = ({
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">
+              <label className="block text-xs font-bold text-slate-700 mb-1">
                 Admin Email
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-gray-400 absolute left-3 top-3" />
+                <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@noven.rw"
-                  className="w-full pl-9 pr-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                  placeholder="admin@samepson.rw"
+                  className="w-full pl-9 pr-3.5 py-2.5 text-xs border border-slate-300 rounded-xl outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
                 />
               </div>
             </div>
