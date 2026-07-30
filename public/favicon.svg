@@ -1,53 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <defs>
-    <linearGradient id="goldGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFE58F"/>
-      <stop offset="25%" stop-color="#D4AF37"/>
-      <stop offset="50%" stop-color="#FFF8D6"/>
-      <stop offset="75%" stop-color="#AA7C11"/>
+      <stop offset="30%" stop-color="#D4AF37"/>
+      <stop offset="60%" stop-color="#FFF8D6"/>
+      <stop offset="85%" stop-color="#AA7C11"/>
       <stop offset="100%" stop-color="#E6C200"/>
     </linearGradient>
-    <linearGradient id="goldDarkFav" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#9A7B1C"/>
+    <linearGradient id="goldDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8C6D14"/>
       <stop offset="50%" stop-color="#D4AF37"/>
-      <stop offset="100%" stop-color="#6B530B"/>
+      <stop offset="100%" stop-color="#5E4705"/>
     </linearGradient>
-    <linearGradient id="goldLightFav" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFF6CC"/>
+    <linearGradient id="goldLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8D6"/>
       <stop offset="50%" stop-color="#E5C158"/>
       <stop offset="100%" stop-color="#B88A14"/>
     </linearGradient>
   </defs>
 
-  {/* Outer Dark Background Tile */}
-  <rect width="100" height="100" rx="20" fill="#0A0A0E"/>
+  <!-- Dark Rounded Tile Base -->
+  <rect width="128" height="128" rx="28" fill="#0A0A0E"/>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="none" stroke="url(#goldGrad)" stroke-width="3" opacity="0.6"/>
 
-  {/* Paper Feeder (Top) */}
-  <rect x="34" y="6" width="32" height="28" rx="1" fill="url(#goldGradFav)"/>
-  <path d="M22 18 h56 v16 H22 z" fill="url(#goldDarkFav)" opacity="0.85"/>
-  <rect x="31" y="10" width="38" height="22" rx="1.5" fill="url(#goldGradFav)"/>
+  <!-- Paper Feeder Slot (Top) -->
+  <rect x="42" y="10" width="44" height="34" rx="3" fill="url(#goldGrad)"/>
+  <path d="M28 26 h72 v18 H28 z" fill="url(#goldDark)" opacity="0.9"/>
+  <rect x="38" y="16" width="52" height="26" rx="2" fill="url(#goldGrad)"/>
 
-  {/* Main Body Upper Section */}
-  <rect x="8" y="30" width="84" height="22" rx="9" fill="url(#goldGradFav)"/>
+  <!-- Main Body Upper Section -->
+  <rect x="10" y="40" width="108" height="28" rx="12" fill="url(#goldGrad)"/>
 
-  {/* Control Panel Buttons & LCD Screen */}
-  <rect x="16" y="37" width="6.5" height="6.5" rx="1" fill="#0A0A0E"/>
-  <circle cx="30" cy="40.25" r="3.25" fill="#0A0A0E"/>
-  <circle cx="41" cy="40.25" r="3.25" fill="#0A0A0E"/>
-  <rect x="60" y="37" width="16" height="6.5" rx="1.5" fill="#0A0A0E"/>
+  <!-- Control Buttons & Screen -->
+  <rect x="20" y="49" width="8" height="8" rx="2" fill="#0A0A0E"/>
+  <circle cx="38" cy="53" r="4" fill="#0A0A0E"/>
+  <circle cx="52" cy="53" r="4" fill="#0A0A0E"/>
+  <rect x="76" y="49" width="22" height="8" rx="2" fill="#0A0A0E"/>
 
-  {/* Black Banner Bar Across Center */}
-  <rect x="8" y="49" width="84" height="16" fill="#0A0A0E"/>
-  
-  {/* SAM EPSON Brand Typography */}
-  <text x="50" y="60.5" text-anchor="middle" fill="url(#goldGradFav)" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="8.8" letter-spacing="0.8">SAM EPSON</text>
+  <!-- Black Banner Bar Across Center -->
+  <rect x="10" y="64" width="108" height="20" fill="#0A0A0E"/>
 
-  {/* Main Body Lower Section */}
-  <path d="M8 65 h84 v6 c0 6 -4.5 10 -10 10 H18 c-5.5 0 -10 -4 -10 -10 v-6 z" fill="url(#goldGradFav)"/>
+  <!-- SAM EPSON Brand Typography -->
+  <text x="64" y="78.5" text-anchor="middle" fill="url(#goldGrad)" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="11.5" letter-spacing="1">SAM EPSON</text>
 
-  {/* Printed Paper Output Tray (Trapezoid) */}
-  <path d="M26 65 h48 l8 25 H18 z" fill="url(#goldLightFav)"/>
+  <!-- Main Body Lower Section -->
+  <path d="M10 84 h108 v6 c0 8 -6 14 -14 14 H24 c-8 0 -14 -6 -14 -14 v-6 z" fill="url(#goldGrad)"/>
 
-  {/* Tagline */}
-  <text x="50" y="97" text-anchor="middle" fill="url(#goldGradFav)" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="4.2" letter-spacing="0.3">Engineered to endure</text>
+  <!-- Printed Paper Output Tray -->
+  <path d="M34 84 h60 l10 32 H24 z" fill="url(#goldLight)"/>
+
+  <!-- Tagline -->
+  <text x="64" y="123" text-anchor="middle" fill="url(#goldGrad)" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="5.5" letter-spacing="0.4">Engineered to endure</text>
 </svg>
