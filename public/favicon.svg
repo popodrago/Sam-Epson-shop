@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="22" fill="#111827"/>
+  {/* Infinity + leaf loop in bright orange */}
+  <path d="M 32 50 C 16 50, 12 30, 26 22 C 40 14, 52 38, 65 52 C 78 66, 88 64, 88 50 C 88 36, 75 32, 60 48 C 45 64, 38 78, 24 78 C 10 78, 8 58, 22 42" stroke="#F97316" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 28 72 L 72 18" stroke="#F97316" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 72 18 C 76 10, 86 10, 88 18 C 88 26, 80 30, 72 18 Z" fill="#F97316"/>
+  <path d="M 72 18 L 81 14" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+</svg>

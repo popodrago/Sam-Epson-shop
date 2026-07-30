@@ -1,0 +1,6 @@
+{
+  "name": "SAM EPSON",
+  "description": "SAM EPSON - Premier printer electronic components and replacement parts catalog for Epson, Brother, and HP systems.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

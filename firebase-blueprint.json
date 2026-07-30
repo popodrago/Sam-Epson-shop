@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "products": {
+      "title": "products",
+      "description": "Fashion catalog items advertised on NoveN platform",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "brand": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "subcategoryId": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "currency": { "type": "string" },
+        "minOrderQty": { "type": "number" },
+        "unit": { "type": "string" },
+        "status": { "type": "string" },
+        "isFeatured": { "type": "boolean" },
+        "isNewArrival": { "type": "boolean" },
+        "images": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "availableSizes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "availableColors": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "specifications": { "type": "object" },
+        "likesCount": { "type": "number" },
+        "viewsCount": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "categoryId", "price", "status"]
+    },
+    "requests": {
+      "title": "requests",
+      "description": "Quotation and bulk purchase requests submitted by buyers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productName": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "customerEmail": { "type": "string" },
+        "customerLocation": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "selectedSize": { "type": "string" },
+        "selectedColor": { "type": "string" },
+        "additionalNotes": { "type": "string" },
+        "status": { "type": "string" },
+        "requestDate": { "type": "string" }
+      },
+      "required": ["productId", "customerName", "customerPhone", "quantity"]
+    }
+  }
+}
