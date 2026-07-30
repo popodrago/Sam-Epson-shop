@@ -320,7 +320,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     id: 'prod-12',
     name: 'Epson L3110 / L3150 Waste Ink Maintenance Box & Absorber Pad Unit',
     brand: 'Epson',
-    categoryId: 'maintenance-kits',
+    categoryId: 'ink-systems',
     subcategoryId: 'waste-tank',
     description: 'Full waste ink reservoir tank with high-density absorbent felt pads. Clears "Waste Ink Pad Is At The End Of Its Service Life" warning when reset.',
     price: 22000,
@@ -399,5 +399,372 @@ export const INITIAL_PRODUCTS: Product[] = [
     viewsCount: 670,
     likesCount: 52,
     createdAt: '2026-07-25T09:15:00Z'
+  },
+  {
+    id: 'prod-15',
+    name: 'Epson L805 / L800 Main Logic Board Assembly',
+    brand: 'Epson',
+    categoryId: 'mainboards',
+    subcategoryId: 'logicboard',
+    description: 'Original high-performance logic motherboard for 6-color Epson photo printers. Controls MicroPiezo firing timings, stepper motor drivers, and USB connectivity.',
+    price: 88000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Epson L805', 'Epson L800', 'Epson L850'],
+    specifications: {
+      Processor: 'Epson Custom Logic Controller',
+      Interface: 'USB 2.0 High Speed + Wi-Fi',
+      Condition: '100% Bench Diagnostic Tested'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: true,
+    isNewArrival: false,
+    viewsCount: 780,
+    likesCount: 64,
+    createdAt: '2026-07-26T10:00:00Z'
+  },
+  {
+    id: 'prod-16',
+    name: 'Epson L3110 / L3150 Paper Feed (PE) Optical Sensor Module',
+    brand: 'Epson',
+    categoryId: 'sensors',
+    subcategoryId: 'paper-sensor',
+    description: 'High-sensitivity optical paper presence detection sensor. Resolves "Paper Out", fake jam alerts, and incorrect page start positioning.',
+    price: 16000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Epson L3110', 'Epson L3150', 'Epson L3210', 'Epson L3250'],
+    specifications: {
+      SensorType: 'Infrared Photoelectric Transmissive',
+      Cable: 'Pre-attached 3-pin Connector Wire'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 310,
+    likesCount: 24,
+    createdAt: '2026-07-27T08:30:00Z'
+  },
+  {
+    id: 'prod-17',
+    name: 'HP Smart Tank 500 / 600 Series 32V External AC Power Adapter',
+    brand: 'HP',
+    categoryId: 'power-supplies',
+    subcategoryId: 'adapter',
+    description: 'Regulated external AC/DC power supply brick adapter for HP Smart Tank and DeskJet All-in-One printers. Heavy-duty copper windings with surge protection.',
+    price: 28000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['HP Smart Tank 515', 'HP Smart Tank 530', 'HP DeskJet 2700', 'HP DeskJet 3700'],
+    specifications: {
+      Input: '100-240V 50/60Hz',
+      Output: '32V DC 1560mA / 12V 625mA',
+      Connector: 'HP 3-pin Purple Plug'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: false,
+    viewsCount: 290,
+    likesCount: 19,
+    createdAt: '2026-07-27T09:00:00Z'
+  },
+  {
+    id: 'prod-18',
+    name: 'Epson L800 / L805 Printhead Carriage PCA Sub-Board',
+    brand: 'Epson',
+    categoryId: 'control-boards',
+    subcategoryId: 'carriage-board',
+    description: 'Carriage interface circuit board directly mounted behind the printhead. Connects flat flex ribbon signal cables seamlessly to nozzle contact pins.',
+    price: 32000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Epson L805', 'Epson L800', 'Epson L850'],
+    specifications: {
+      Contacts: 'Gold Plated Low Resistance Pins',
+      Fitment: 'Direct Snap-fit on Printhead Carrier'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 340,
+    likesCount: 27,
+    createdAt: '2026-07-27T11:00:00Z'
+  },
+  {
+    id: 'prod-19',
+    name: 'Brother DCP-T500W / T700W Paper Feed (PF) Stepper Motor',
+    brand: 'Brother',
+    categoryId: 'motors',
+    subcategoryId: 'paper-motor',
+    description: 'High-torque paper drive stepper motor for Brother InkBenefit printers. Drives precision feed rollers for exact line positioning without horizontal white bands.',
+    price: 34000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Brother DCP-T500W', 'Brother DCP-T700W', 'Brother MFC-T800W'],
+    specifications: {
+      MotorType: 'DC Servo / Stepper Motor',
+      Gear: 'Pre-fitted Helical Drive Pinion'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: false,
+    viewsCount: 260,
+    likesCount: 18,
+    createdAt: '2026-07-28T08:00:00Z'
+  },
+  {
+    id: 'prod-20',
+    name: 'Epson EcoTank L382 / L386 Lower Feed & Separation Roller Unit',
+    brand: 'Epson',
+    categoryId: 'rollers',
+    subcategoryId: 'feed-roller',
+    description: 'Soft rubber bottom separation roller with spring housing assembly. Eliminates multi-sheet paper feeding and roller slipping.',
+    price: 14000,
+    currency: 'FRW',
+    minOrderQty: 2,
+    unit: 'Set',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['Epson L382', 'Epson L386', 'Epson L310', 'Epson L485'],
+    specifications: {
+      RubberGrade: 'High Friction Synthetic Rubber',
+      Includes: 'Roller Shaft + Separation Spring'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 380,
+    likesCount: 29,
+    createdAt: '2026-07-28T09:30:00Z'
+  },
+  {
+    id: 'prod-21',
+    name: 'Universal Optical Sensor & Encoder Flex Ribbon Cable Pair',
+    brand: 'Epson',
+    categoryId: 'cables',
+    subcategoryId: 'sensor-cable',
+    description: 'Flex ribbon data cable pair connecting paper sensors and optical encoder boards to the motherboard. Reinforced insulation against fatigue cracks.',
+    price: 9500,
+    currency: 'FRW',
+    minOrderQty: 2,
+    unit: 'Pair',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['Epson L3110', 'Epson L3150', 'Brother DCP-T500W', 'Brother DCP-T710W'],
+    specifications: {
+      Pins: '4-pin & 6-pin 1.0mm Pitch',
+      Length: '45 cm Flexible FFC'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: false,
+    viewsCount: 190,
+    likesCount: 14,
+    createdAt: '2026-07-28T11:00:00Z'
+  },
+  {
+    id: 'prod-22',
+    name: 'Brother DCP-T500W / T700W Keypad Control Panel Switch Assembly',
+    brand: 'Brother',
+    categoryId: 'display-panels',
+    subcategoryId: 'button-panel',
+    description: 'Front control panel rubber membrane switches and indicator LED PCB board. Restores responsive button clicks and power control.',
+    price: 26000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Brother DCP-T500W', 'Brother DCP-T700W', 'Brother DCP-T300'],
+    specifications: {
+      Buttons: 'Power, Mono Start, Color Start, Stop/Clear, Menu',
+      Interface: 'Multi-pin Ribbon Header'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 280,
+    likesCount: 22,
+    createdAt: '2026-07-28T12:00:00Z'
+  },
+  {
+    id: 'prod-23',
+    name: 'Epson L800 / L805 / L1800 Solvent & Dye Ink Dampers (Set of 6)',
+    brand: 'Epson',
+    categoryId: 'ink-systems',
+    subcategoryId: 'damper',
+    description: 'Set of 6 transparent ink dampers with high-density micro mesh filter screens. Prevents air locks, nozzle starvation, and ink backflow.',
+    price: 18000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Set',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['Epson L800', 'Epson L805', 'Epson L1800', 'Epson Stylus Photo 1400'],
+    specifications: {
+      Filter: '3 Micron Steel Mesh Filter',
+      Includes: '6 Dampers with Soft Silicone Tube Connectors'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: true,
+    isNewArrival: true,
+    viewsCount: 520,
+    likesCount: 45,
+    createdAt: '2026-07-29T08:00:00Z'
+  },
+  {
+    id: 'prod-24',
+    name: 'Universal MicroPiezo Printhead Flush & Nozzle Cleaning Solution Kit',
+    brand: 'Epson',
+    categoryId: 'maintenance-kits',
+    subcategoryId: 'head-cleaning',
+    description: 'Professional 250ml printhead flush liquid, luer-lock syringe, silicone transfer adapter, and gloves. Dissolves dried pigment & dye ink in clogged nozzles.',
+    price: 19500,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Kit',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['Epson L382', 'Epson L3150', 'Brother DCP-T500W', 'HP Smart Tank 515'],
+    specifications: {
+      Volume: '250ml Active Solvent Solution',
+      Includes: 'Syringe + Flexible Nozzle Tube + Gloves'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: true,
+    isNewArrival: false,
+    viewsCount: 880,
+    likesCount: 71,
+    createdAt: '2026-07-29T10:00:00Z'
+  },
+  {
+    id: 'prod-25',
+    name: 'Epson EcoTank L3150 / L3110 Transmission Gear Assembly Train Kit',
+    brand: 'Epson',
+    categoryId: 'maintenance-kits',
+    subcategoryId: 'gear-kit',
+    description: 'Precision molded nylon drive gear set for carriage and paper pickup drive assemblies. Eliminates gear grinding noise and tooth misalignment.',
+    price: 17000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Kit',
+    status: 'Available',
+    condition: 'New',
+    compatibleModels: ['Epson L3110', 'Epson L3150', 'Epson L3210', 'Epson L3250'],
+    specifications: {
+      Material: 'Reinforced Industrial Nylon',
+      Includes: '4 Interlocking Reduction Drive Gears'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 390,
+    likesCount: 33,
+    createdAt: '2026-07-29T11:30:00Z'
+  },
+  {
+    id: 'prod-26',
+    name: 'Epson L382 / L3150 Printhead Carriage Guide Brackets & Tension Springs',
+    brand: 'Epson',
+    categoryId: 'printer-parts',
+    subcategoryId: 'springs-brackets',
+    description: 'Stainless steel carriage slider guide brackets and timing belt tensioner springs. Maintains strict head gap spacing for sharp photo prints.',
+    price: 12500,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Set',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Epson L382', 'Epson L3150', 'Epson L805'],
+    specifications: {
+      Material: 'Tension Treated Stainless Steel',
+      Includes: '2 Brackets + 2 High Tension Springs'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: false,
+    viewsCount: 220,
+    likesCount: 16,
+    createdAt: '2026-07-30T07:00:00Z'
+  },
+  {
+    id: 'prod-27',
+    name: 'Epson EcoTank L3150 Top Housing Cover & Scanner Glass Frame Assembly',
+    brand: 'Epson',
+    categoryId: 'printer-parts',
+    subcategoryId: 'covers-housings',
+    description: 'Original outer plastic housing shell casing, scanner glass bed, and top cover lid. Replaces cracked, scratched, or damaged printer body parts.',
+    price: 32000,
+    currency: 'FRW',
+    minOrderQty: 1,
+    unit: 'Pcs',
+    status: 'Available',
+    condition: 'Original',
+    compatibleModels: ['Epson L3150', 'Epson L3110', 'Epson L3156'],
+    specifications: {
+      Color: 'Matte Black High Impact ABS Plastic',
+      Includes: 'Scanner Glass + Lid Hinges + Top Housing Shell'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800'
+    ],
+    isFeatured: false,
+    isNewArrival: true,
+    viewsCount: 410,
+    likesCount: 31,
+    createdAt: '2026-07-30T08:00:00Z'
   }
 ];
+

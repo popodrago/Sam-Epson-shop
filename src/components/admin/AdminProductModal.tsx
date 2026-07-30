@@ -84,23 +84,24 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
 
   const [formData, setFormData] = useState<Partial<Product>>({
     name: '',
-    brand: 'NoveN Craft',
-    categoryId: 'clothes',
-    subcategoryId: 'shirts',
+    brand: 'Epson',
+    categoryId: 'printheads',
+    subcategoryId: 'epson-printheads',
     description: '',
-    price: 35000,
-    currency: 'RWF',
+    price: 45000,
+    currency: 'FRW',
     minOrderQty: 1,
     unit: 'Pcs',
     status: 'Available',
+    condition: 'Original',
     isFeatured: true,
     isNewArrival: true,
-    images: ['https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=800'],
-    availableSizes: ['S', 'M', 'L', 'XL'],
-    availableColors: ['Black', 'White', 'Navy'],
+    images: ['https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800'],
+    availableSizes: [],
+    availableColors: ['Standard'],
     specifications: {
-      Material: '100% Premium Combed Cotton',
-      Origin: 'Crafted in Rwanda',
+      Condition: 'Original / Bench Tested',
+      Compatibility: 'Epson L382, L3150, L3250',
     },
   });
 
@@ -122,25 +123,26 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
       setFormData(productToEdit);
     } else {
       setFormData({
-        id: `noven-${Date.now()}`,
+        id: `sam-${Date.now()}`,
         name: '',
-        brand: 'NoveN Craft',
-        categoryId: 'clothes',
-        subcategoryId: 'shirts',
+        brand: 'Epson',
+        categoryId: 'printheads',
+        subcategoryId: 'epson-printheads',
         description: '',
-        price: 35000,
-        currency: 'RWF',
+        price: 45000,
+        currency: 'FRW',
         minOrderQty: 1,
         unit: 'Pcs',
         status: 'Available',
+        condition: 'Original',
         isFeatured: true,
         isNewArrival: true,
-        images: ['https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&q=80&w=800'],
-        availableSizes: ['S', 'M', 'L', 'XL'],
-        availableColors: ['Black', 'White', 'Navy'],
+        images: ['https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800'],
+        availableSizes: [],
+        availableColors: ['Standard'],
         specifications: {
-          Material: '100% Premium Cotton',
-          Origin: 'Crafted in Rwanda',
+          Condition: 'Original / Bench Tested',
+          Compatibility: 'Epson L382, L3150, L3250',
         },
         likesCount: 0,
         viewsCount: 0,
@@ -329,19 +331,19 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
         className="hidden"
       />
 
-      <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-gray-100 p-6 md:p-8 relative">
-        <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-6">
+      <div className="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 p-6 md:p-8 relative text-slate-900 dark:text-slate-100">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
           <div>
-            <h2 className="text-xl font-black text-gray-900">
-              {productToEdit ? 'Edit Catalog Item' : 'Add New Product to NoveN Catalog'}
+            <h2 className="text-xl font-black text-slate-900 dark:text-white">
+              {productToEdit ? 'Edit Printer Component' : 'Add New Product to SAM EPSON Directory'}
             </h2>
-            <p className="text-xs text-gray-500">
-              Set exact price in Rwandan Francs (RWF), attach images, and set availability.
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Set exact price in Rwandan Francs (FRW), select category, attach images, and set availability.
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-2 text-gray-400 hover:text-gray-900 rounded-full hover:bg-gray-100 transition-colors cursor-pointer"
+            className="p-2 text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -351,33 +353,33 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
           {/* Basic Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">Product Title *</label>
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Product Title *</label>
               <input
                 type="text"
                 required
                 value={formData.name || ''}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="e.g. NoveN Signature Oxford Cotton Shirt"
-                className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 font-semibold"
+                placeholder="e.g. Epson L382 / L3150 MicroPiezo Printhead"
+                className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">Brand / Line *</label>
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Brand / Manufacturer *</label>
               <input
                 type="text"
                 required
                 value={formData.brand || ''}
                 onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
-                placeholder="e.g. NoveN Craft"
-                className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 font-semibold"
+                placeholder="e.g. Epson, Brother, HP"
+                className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">Main Category</label>
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Main Category *</label>
               <select
-                value={formData.categoryId || 'clothes'}
+                value={formData.categoryId || 'printheads'}
                 onChange={(e) => {
                   const catId = e.target.value;
                   const catObj = CATEGORIES.find((c) => c.id === catId);
@@ -387,10 +389,10 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
                     subcategoryId: catObj?.subcategories[0]?.id || '',
                   });
                 }}
-                className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 bg-white font-semibold"
+                className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold cursor-pointer"
               >
                 {CATEGORIES.map((c) => (
-                  <option key={c.id} value={c.id}>
+                  <option key={c.id} value={c.id} className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium">
                     {c.name}
                   </option>
                 ))}
@@ -398,14 +400,14 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">Subcategory</label>
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Subcategory *</label>
               <select
                 value={formData.subcategoryId || ''}
                 onChange={(e) => setFormData({ ...formData, subcategoryId: e.target.value })}
-                className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 bg-white font-semibold"
+                className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold cursor-pointer"
               >
                 {currentCategoryObj?.subcategories.map((sub) => (
-                  <option key={sub.id} value={sub.id}>
+                  <option key={sub.id} value={sub.id} className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium">
                     {sub.name}
                   </option>
                 ))}
@@ -413,24 +415,24 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">
-                Price in RWF (Rwandan Francs) *
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
+                Price in FRW (Rwandan Francs) *
               </label>
               <div className="relative">
                 <input
                   type="number"
                   required
                   min="1"
-                  value={formData.price ?? 35000}
+                  value={formData.price ?? 45000}
                   onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
-                  className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 font-bold"
+                  className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold"
                 />
-                <span className="absolute right-3 top-2.5 text-xs font-bold text-orange-600">RWF</span>
+                <span className="absolute right-3 top-2.5 text-xs font-bold text-blue-600 dark:text-blue-400">FRW</span>
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">
                 Minimum Order Quantity & Unit
               </label>
               <div className="grid grid-cols-2 gap-2">
@@ -439,18 +441,19 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
                   min="1"
                   value={formData.minOrderQty ?? 1}
                   onChange={(e) => setFormData({ ...formData, minOrderQty: Number(e.target.value) })}
-                  className="w-full px-3 py-2 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 font-semibold"
+                  className="w-full px-3 py-2 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold"
                   placeholder="Min Qty"
                 />
                 <select
                   value={formData.unit || 'Pcs'}
                   onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
-                  className="w-full px-2 py-2 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 bg-white font-semibold"
+                  className="w-full px-2 py-2 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-semibold cursor-pointer"
                 >
-                  <option value="Pcs">Pcs</option>
-                  <option value="Pairs">Pairs</option>
-                  <option value="Sets">Sets</option>
-                  <option value="Dozens">Dozens</option>
+                  <option value="Pcs" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Pcs</option>
+                  <option value="Pairs" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Pairs</option>
+                  <option value="Sets" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Sets</option>
+                  <option value="Kit" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Kit</option>
+                  <option value="Dozens" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Dozens</option>
                 </select>
               </div>
             </div>
@@ -458,29 +461,29 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
 
           {/* Description */}
           <div>
-            <label className="block text-xs font-bold text-gray-700 mb-1">Description</label>
+            <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Description & Compatibility Specs</label>
             <textarea
               rows={3}
               value={formData.description || ''}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-              placeholder="Detailed description of craftsmanship, materials, sizing fit..."
-              className="w-full px-3.5 py-2.5 text-xs border border-gray-300 rounded-xl outline-none focus:border-orange-500 font-medium"
+              placeholder="Detailed description, nozzle specifications, tested printer models..."
+              className="w-full px-3.5 py-2.5 text-xs border border-slate-300 dark:border-slate-700 rounded-xl outline-none focus:border-blue-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-medium"
             />
           </div>
 
           {/* Availability & Flags */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-gray-50 p-4 rounded-2xl border border-gray-200">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-slate-50 dark:bg-slate-800/60 p-4 rounded-2xl border border-slate-200 dark:border-slate-700">
             <div>
-              <label className="block text-xs font-bold text-gray-700 mb-1">Availability Status</label>
+              <label className="block text-xs font-bold text-slate-800 dark:text-slate-200 mb-1">Availability Status</label>
               <select
                 value={formData.status || 'Available'}
                 onChange={(e) => setFormData({ ...formData, status: e.target.value as any })}
-                className="w-full px-3 py-2 text-xs border border-gray-300 rounded-xl bg-white outline-none focus:border-orange-500 font-bold"
+                className="w-full px-3 py-2 text-xs border border-slate-300 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-800 text-slate-900 dark:text-white outline-none focus:border-blue-600 font-bold cursor-pointer"
               >
-                <option value="Available">Available</option>
-                <option value="Sold Out">Sold Out</option>
-                <option value="Out of Stock">Out of Stock</option>
-                <option value="Hidden">Hidden (Admin Only)</option>
+                <option value="Available" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Available</option>
+                <option value="Sold Out" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Sold Out</option>
+                <option value="Out of Stock" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Out of Stock</option>
+                <option value="Hidden" className="bg-white dark:bg-slate-800 text-slate-900 dark:text-white">Hidden (Admin Only)</option>
               </select>
             </div>
 
@@ -490,9 +493,9 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
                 id="isFeatured"
                 checked={!!formData.isFeatured}
                 onChange={(e) => setFormData({ ...formData, isFeatured: e.target.checked })}
-                className="w-4 h-4 text-orange-500 rounded accent-orange-500"
+                className="w-4 h-4 text-blue-600 rounded accent-blue-600 cursor-pointer"
               />
-              <label htmlFor="isFeatured" className="text-xs font-bold text-gray-800 cursor-pointer">
+              <label htmlFor="isFeatured" className="text-xs font-bold text-slate-800 dark:text-slate-200 cursor-pointer">
                 Show in Featured Showcase
               </label>
             </div>
@@ -503,9 +506,9 @@ export const AdminProductModal: React.FC<AdminProductModalProps> = ({
                 id="isNewArrival"
                 checked={!!formData.isNewArrival}
                 onChange={(e) => setFormData({ ...formData, isNewArrival: e.target.checked })}
-                className="w-4 h-4 text-orange-500 rounded accent-orange-500"
+                className="w-4 h-4 text-blue-600 rounded accent-blue-600 cursor-pointer"
               />
-              <label htmlFor="isNewArrival" className="text-xs font-bold text-gray-800 cursor-pointer">
+              <label htmlFor="isNewArrival" className="text-xs font-bold text-slate-800 dark:text-slate-200 cursor-pointer">
                 Mark as New Arrival
               </label>
             </div>

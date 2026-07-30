@@ -100,7 +100,9 @@ function MainAppContent() {
     seedProductsIfEmpty()
       .then((initialItems) => {
         if (initialItems && initialItems.length > 0) {
-          setProducts(initialItems);
+          const existingIds = new Set(initialItems.map((p) => p.id));
+          const missingInitial = INITIAL_PRODUCTS.filter((p) => !existingIds.has(p.id));
+          setProducts([...initialItems, ...missingInitial]);
         }
       })
       .catch((err) => {
@@ -110,7 +112,9 @@ function MainAppContent() {
     // 2. Subscribe to products updates from Firestore
     const unsubscribeProducts = subscribeToProducts((realtimeProducts) => {
       if (realtimeProducts && realtimeProducts.length > 0) {
-        setProducts(realtimeProducts);
+        const existingIds = new Set(realtimeProducts.map((p) => p.id));
+        const missingInitial = INITIAL_PRODUCTS.filter((p) => !existingIds.has(p.id));
+        setProducts([...realtimeProducts, ...missingInitial]);
       }
     });
 
@@ -283,6 +287,16 @@ function MainAppContent() {
     } catch (err) {
       console.error('Failed to save product to Firestore:', err);
     }
+    // Update local state immediately so UI updates in real time even before Firestore push
+    setProducts((prev) => {
+      const idx = prev.findIndex((p) => p.id === product.id);
+      if (idx >= 0) {
+        const updated = [...prev];
+        updated[idx] = product;
+        return updated;
+      }
+      return [product, ...prev];
+    });
   };
 
   const handleDeleteProduct = async (productId: string) => {
@@ -317,13 +331,23 @@ function MainAppContent() {
   // Filtered and Sorted Products
   const filteredProducts = useMemo(() => {
     return products.filter((p) => {
+      const isSpecificFilterActive = Boolean(
+        filterState.categoryId ||
+        filterState.subcategoryId ||
+        filterState.searchQuery ||
+        filterState.brand
+      );
+
       // Tab-specific filters: 'featured' tab filters for isFeatured, 'new-arrivals' tab filters for isNewArrival
-      if (currentView === 'featured' && !p.isFeatured) return false;
-      if (currentView === 'new-arrivals' && !p.isNewArrival) return false;
+      // Only enforce tab filter if user has NOT selected a specific category, subcategory, brand, or search query
+      if (!isSpecificFilterActive) {
+        if (currentView === 'featured' && !p.isFeatured) return false;
+        if (currentView === 'new-arrivals' && !p.isNewArrival) return false;
+      }
 
       // Search query
       if (filterState.searchQuery) {
-        const q = filterState.searchQuery.toLowerCase();
+        const q = filterState.searchQuery.toLowerCase().trim();
         const matchesName = p.name.toLowerCase().includes(q);
         const matchesBrand = p.brand.toLowerCase().includes(q);
         const matchesCategory = p.categoryId.toLowerCase().includes(q) || p.subcategoryId.toLowerCase().includes(q);
@@ -331,14 +355,29 @@ function MainAppContent() {
         if (!matchesName && !matchesBrand && !matchesCategory && !matchesDesc) return false;
       }
 
-      // Category filter
-      if (filterState.categoryId && p.categoryId !== filterState.categoryId) return false;
+      // Category filter (handles exact match, case-insensitivity, and singular/plural variations like printhead vs printheads)
+      if (filterState.categoryId) {
+        const targetCat = filterState.categoryId.toLowerCase().trim();
+        const pCat = (p.categoryId || '').toLowerCase().trim();
+        
+        const catNormTarget = targetCat.replace(/s$/, '').replace(/er$/, '');
+        const catNormProd = pCat.replace(/s$/, '').replace(/er$/, '');
+
+        const matchesCategoryDirect = pCat === targetCat;
+        const matchesCategoryNorm = catNormProd.includes(catNormTarget) || catNormTarget.includes(catNormProd);
+
+        if (!matchesCategoryDirect && !matchesCategoryNorm) return false;
+      }
 
       // Subcategory filter
-      if (filterState.subcategoryId && p.subcategoryId !== filterState.subcategoryId) return false;
+      if (filterState.subcategoryId) {
+        const targetSub = filterState.subcategoryId.toLowerCase().trim();
+        const pSub = (p.subcategoryId || '').toLowerCase().trim();
+        if (pSub !== targetSub && !pSub.includes(targetSub) && !targetSub.includes(pSub)) return false;
+      }
 
       // Brand filter
-      if (filterState.brand && p.brand !== filterState.brand) return false;
+      if (filterState.brand && p.brand.toLowerCase().trim() !== filterState.brand.toLowerCase().trim()) return false;
 
       // Status filter
       if (filterState.status !== 'All' && p.status !== filterState.status) return false;

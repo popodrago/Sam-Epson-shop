@@ -516,14 +516,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   <select
                     value={requestStatusFilter}
                     onChange={(e) => setRequestStatusFilter(e.target.value)}
-                    className="px-3 py-1.5 text-xs font-bold border border-gray-300 rounded-xl bg-white outline-none focus:border-orange-500"
+                    className="px-3 py-1.5 text-xs font-bold border border-slate-300 rounded-xl bg-white text-slate-900 outline-none focus:border-blue-600 cursor-pointer"
                   >
-                    <option value="All">All Requests</option>
-                    <option value="Pending">Pending</option>
-                    <option value="In Review">In Review</option>
-                    <option value="Quoted">Quoted</option>
-                    <option value="Completed">Completed</option>
-                    <option value="Cancelled">Cancelled</option>
+                    <option value="All" className="bg-white text-slate-900 font-medium">All Requests</option>
+                    <option value="Pending" className="bg-white text-slate-900 font-medium">Pending</option>
+                    <option value="In Review" className="bg-white text-slate-900 font-medium">In Review</option>
+                    <option value="Quoted" className="bg-white text-slate-900 font-medium">Quoted</option>
+                    <option value="Completed" className="bg-white text-slate-900 font-medium">Completed</option>
+                    <option value="Cancelled" className="bg-white text-slate-900 font-medium">Cancelled</option>
                   </select>
                 </div>
 
@@ -579,13 +579,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                           onChange={(e) =>
                             onUpdateRequestStatus(req.id, e.target.value as CustomerRequest['status'])
                           }
-                          className="px-2.5 py-1 text-xs font-bold border border-gray-300 rounded-lg bg-white outline-none focus:border-orange-500"
+                          className="px-2.5 py-1 text-xs font-bold border border-slate-300 rounded-lg bg-white text-slate-900 outline-none focus:border-blue-600 cursor-pointer"
                         >
-                          <option value="Pending">Pending</option>
-                          <option value="In Review">In Review</option>
-                          <option value="Quoted">Quoted</option>
-                          <option value="Completed">Completed</option>
-                          <option value="Cancelled">Cancelled</option>
+                          <option value="Pending" className="bg-white text-slate-900 font-medium">Pending</option>
+                          <option value="In Review" className="bg-white text-slate-900 font-medium">In Review</option>
+                          <option value="Quoted" className="bg-white text-slate-900 font-medium">Quoted</option>
+                          <option value="Completed" className="bg-white text-slate-900 font-medium">Completed</option>
+                          <option value="Cancelled" className="bg-white text-slate-900 font-medium">Cancelled</option>
                         </select>
                       </div>
                     </div>

@@ -16,17 +16,17 @@ export const NovenLogo: React.FC<LogoProps> = ({
   inline = true,
 }) => {
   const iconSizes = {
-    sm: 'w-7 h-7',
-    md: 'w-9 h-9',
-    lg: 'w-12 h-12',
-    xl: 'w-16 h-16',
+    sm: 'w-8 h-8 p-1.5',
+    md: 'w-10 h-10 p-2',
+    lg: 'w-12 h-12 p-2.5',
+    xl: 'w-16 h-16 p-3.5',
   };
 
   const titleSizes = {
-    sm: 'text-sm tracking-tight',
-    md: 'text-base font-bold tracking-tight',
-    lg: 'text-xl font-extrabold tracking-tight',
-    xl: 'text-2xl font-black tracking-tight',
+    sm: 'text-base font-extrabold tracking-tight',
+    md: 'text-lg font-black tracking-tight',
+    lg: 'text-2xl font-black tracking-tight',
+    xl: 'text-3xl font-black tracking-tight',
   };
 
   const taglineSizes = {
@@ -36,45 +36,49 @@ export const NovenLogo: React.FC<LogoProps> = ({
     xl: 'text-sm tracking-widest',
   };
 
-  const primaryColor = variant === 'white' ? '#FFFFFF' : '#0F172A'; // Slate 900
-  const accentColor = '#2563EB'; // Vibrant tech blue
   const textColor = variant === 'white' ? 'text-white' : 'text-slate-900 dark:text-white';
-  const taglineColor = variant === 'white' ? 'text-slate-300' : 'text-slate-500 dark:text-slate-400';
+  const taglineColor = variant === 'white' ? 'text-slate-300' : 'text-slate-600 dark:text-slate-400';
 
   return (
     <div className={`flex ${inline ? 'flex-row items-center gap-2.5' : 'flex-col items-center'} ${className}`}>
-      {/* Precision Micro-Printhead & Circuit Badge Emblem */}
-      <div className={`relative shrink-0 flex items-center justify-center rounded-lg bg-slate-900 dark:bg-slate-800 p-2 text-white shadow-sm ring-1 ring-slate-800 ${iconSizes[size]}`}>
+      {/* SAM EPSON Technical Emblem Badge */}
+      <div className={`relative shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 text-white shadow-md ring-2 ring-blue-500/30 ${iconSizes[size]}`}>
+        {/* Glow backdrop */}
+        <div className="absolute inset-0 rounded-xl bg-blue-500/20 blur-xs"></div>
+        
         <svg
-          viewBox="0 0 24 24"
+          viewBox="0 0 28 28"
           fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-full h-full text-blue-500"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full text-white relative z-10"
         >
-          {/* Outer Board Frame */}
-          <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="2" />
-          {/* Printhead Nozzles Grid */}
-          <path d="M7 8h10M7 12h10M7 16h6" stroke="currentColor" strokeWidth="1.5" strokeDasharray="1 1.5" />
-          {/* Microchip Core */}
-          <rect x="15" y="14" width="4" height="4" fill="#2563EB" stroke="none" rx="0.5" />
-          {/* Micro Contact Pin */}
-          <path d="M12 4V2M8 4V2M16 4V2" stroke="#2563EB" strokeWidth="1.5" />
+          {/* Mainboard & Printhead Die Frame */}
+          <rect x="3" y="4" width="22" height="20" rx="3" fill="#0F172A" stroke="white" strokeWidth="1.5" />
+          {/* Circuit Trace Contacts */}
+          <path d="M7 2v2M14 2v2M21 2v2" stroke="#60A5FA" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M7 24v2M14 24v2M21 24v2" stroke="#60A5FA" strokeWidth="1.5" strokeLinecap="round" />
+          {/* MicroPiezo Nozzle Array Lines */}
+          <line x1="7" y1="9" x2="21" y2="9" stroke="#93C5FD" strokeWidth="1.5" strokeDasharray="2 1.5" />
+          <line x1="7" y1="13" x2="21" y2="13" stroke="#93C5FD" strokeWidth="1.5" strokeDasharray="2 1.5" />
+          <line x1="7" y1="17" x2="16" y2="17" stroke="#93C5FD" strokeWidth="1.5" strokeDasharray="2 1.5" />
+          {/* Golden/Cyan Chip Core */}
+          <rect x="18" y="15" width="5" height="5" rx="1" fill="#38BDF8" stroke="#0F172A" strokeWidth="0.8" />
         </svg>
+
+        {/* Certified Dot */}
+        <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white dark:border-slate-900 shadow-xs"></span>
       </div>
 
-      {/* Modern Editorial Typography */}
+      {/* Brand Name Typography */}
       <div className={`${inline ? 'text-left' : 'text-center'}`}>
         <div className={`font-mono uppercase ${titleSizes[size]} ${textColor} leading-none flex items-center gap-1.5`}>
-          <span>SAM</span>
-          <span className="text-blue-600 dark:text-blue-400 font-extrabold">EPSON</span>
+          <span className="font-extrabold tracking-tight">SAM</span>
+          <span className="text-blue-600 dark:text-blue-400 font-black tracking-tighter bg-clip-text">EPSON</span>
         </div>
 
         {showTagline && (
-          <div className={`font-sans uppercase font-medium ${taglineSizes[size]} ${taglineColor} mt-1`}>
-            PRINTER PARTS & ELECTRONICS
+          <div className={`font-sans uppercase font-bold ${taglineSizes[size]} ${taglineColor} mt-1 flex items-center gap-1`}>
+            <span>PRINTER TECHNICAL SPARES</span>
           </div>
         )}
       </div>
@@ -83,3 +87,4 @@ export const NovenLogo: React.FC<LogoProps> = ({
 };
 
 export const SamEpsonLogo = NovenLogo;
+
