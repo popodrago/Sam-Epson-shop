@@ -79,20 +79,32 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
 
                     {/* Subcategories Flyout Menu */}
                     {activeCategoryIndex === idx && (
-                      <div className="absolute left-full top-0 ml-2 w-60 bg-white dark:bg-slate-900 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 p-3 z-50">
-                        <div className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2 pb-1 border-b border-slate-200 dark:border-slate-800">
-                          {cat.name}
-                        </div>
-                        <div className="space-y-1">
-                          {cat.subcategories.map((sub) => (
+                      <div className="absolute left-full top-0 -ml-1.5 pl-2.5 w-64 z-50">
+                        <div className="relative bg-white dark:bg-slate-900 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 p-3.5 space-y-2">
+                          <div className="flex items-center justify-between pb-1.5 border-b border-slate-100 dark:border-slate-800">
+                            <span className="text-[11px] font-mono font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                              {cat.name}
+                            </span>
                             <button
-                              key={sub.id}
-                              onClick={() => onSelectCategory(cat.id, sub.id)}
-                              className="w-full text-left px-2.5 py-1.5 text-xs font-sans text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 rounded transition-colors"
+                              onClick={() => onSelectCategory(cat.id)}
+                              className="text-[10px] font-mono text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 underline cursor-pointer"
                             >
-                              {sub.name}
+                              All ({cat.subcategories.length})
                             </button>
-                          ))}
+                          </div>
+
+                          <div className="space-y-1 max-h-64 overflow-y-auto pr-0.5">
+                            {cat.subcategories.map((sub) => (
+                              <button
+                                key={sub.id}
+                                onClick={() => onSelectCategory(cat.id, sub.id)}
+                                className="w-full text-left px-2.5 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 rounded-md transition-colors flex items-center justify-between group/sub cursor-pointer"
+                              >
+                                <span>{sub.name}</span>
+                                <ChevronRight className="w-3 h-3 text-slate-400 group-hover/sub:text-blue-600 dark:group-hover/sub:text-blue-400 group-hover/sub:translate-x-0.5 transition-all" />
+                              </button>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}

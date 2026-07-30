@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Heart, Globe, Menu, X, UserCheck, Cpu, SlidersHorizontal, Sun, Moon } from 'lucide-react';
+import { Search, Heart, Globe, Menu, X, UserCheck, Cpu, SlidersHorizontal, Sun, Moon, ChevronRight, ChevronDown, Layers } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { CATEGORIES } from '../../data/categories';
 import { Language } from '../../types';
@@ -203,6 +203,60 @@ export const Header: React.FC<HeaderProps> = ({
               <SlidersHorizontal className="w-3.5 h-3.5 text-blue-400" />
               <span>{t('nav.products')}</span>
             </button>
+
+            {/* Category Subcategory Mega Hover Dropdown */}
+            <div className="relative group/cat">
+              <button
+                onClick={() => onNavigate('products')}
+                className="px-4 py-2.5 flex items-center gap-1.5 border-b-2 border-transparent text-slate-300 hover:text-white hover:bg-slate-800/50 transition-all cursor-pointer font-mono"
+              >
+                <Layers className="w-3.5 h-3.5 text-blue-400" />
+                <span>Categories</span>
+                <ChevronDown className="w-3 h-3 text-slate-400 group-hover/cat:rotate-180 transition-transform" />
+              </button>
+
+              {/* Flyout attached seamlessly */}
+              <div className="absolute top-full left-0 pt-1 hidden group-hover/cat:block z-50 w-64">
+                <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl p-2 space-y-1">
+                  {CATEGORIES.slice(0, 8).map((cat) => (
+                    <div key={cat.id} className="relative group/subcat">
+                      <button
+                        onClick={() => {
+                          onSelectCategory(cat.id);
+                          onNavigate('products');
+                        }}
+                        className="w-full px-3 py-2 text-left rounded-lg text-xs font-mono text-slate-300 hover:text-white hover:bg-slate-800 flex items-center justify-between transition-colors cursor-pointer"
+                      >
+                        <span>{cat.name}</span>
+                        <ChevronRight className="w-3 h-3 text-slate-500 group-hover/subcat:text-blue-400 group-hover/subcat:translate-x-0.5 transition-all" />
+                      </button>
+
+                      {/* Subcategories Flyout with zero-gap overlap */}
+                      <div className="absolute left-full top-0 -ml-1 pl-2.5 hidden group-hover/subcat:block z-50 w-60">
+                        <div className="bg-slate-900 border border-slate-700 rounded-xl shadow-2xl p-3 space-y-1">
+                          <div className="text-[10px] font-mono font-bold text-blue-400 uppercase tracking-wider px-2 pb-1 border-b border-slate-800 mb-1 flex items-center justify-between">
+                            <span>{cat.name}</span>
+                            <span className="text-slate-500 text-[9px]">{cat.subcategories.length} types</span>
+                          </div>
+                          {cat.subcategories.map((sub) => (
+                            <button
+                              key={sub.id}
+                              onClick={() => {
+                                onSelectCategory(cat.id);
+                                onNavigate('products');
+                              }}
+                              className="w-full text-left px-2.5 py-1.5 text-xs text-slate-300 hover:text-white hover:bg-blue-600/30 rounded-md transition-colors cursor-pointer block truncate"
+                            >
+                              {sub.name}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-[11px] font-mono text-slate-400 flex items-center gap-4">
